@@ -84,9 +84,8 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgres://postgresql:Vlh8yIQVTIP1PlIcW2CneAvXCiXOOG6s@dpg-cnll5sud3nmc7383ngtg-a.ohio-postgres.render.com/db_futebolarte")
-
-# postgres://postgresql:Vlh8yIQVTIP1PlIcW2CneAvXCiXOOG6s@dpg-cnll5sud3nmc7383ngtg-a.ohio-postgres.render.com/db_futebolarte
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
