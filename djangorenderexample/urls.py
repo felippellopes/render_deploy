@@ -15,12 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-
-admin.site.site_header = 'Login Unitrampo'
+from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path("", include("render_deploy.urls")),
     path('admin/', admin.site.urls),
-    
 ]
+
+urlpatterns += staticfiles_urlpatterns()
